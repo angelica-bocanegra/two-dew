@@ -38,13 +38,34 @@ const AddItem = ({
       });
   };
 
+  const styles = {
+    input: {
+      outline: 'none',
+      borderStyle: 'none none solid none',
+      borderWidth: '1px',
+      borderColor: '#cccccc',
+      padding: '0px',
+      margin: '5px 0px 5px 5px',
+    },
+    button: {
+      borderStyle: 'none none solid none',
+      borderWidth: '1px',
+      borderColor: '#cccccc',
+      padding: '0px',
+      margin: '5px 5px 5px 0px',
+    },
+  };
+
   return (
     <div
       style={{
         overflow: 'auto',
+        display: 'flex',
+
       }}
     >
       <input
+        style={styles.input}
         value={value}
         onChange={(e) => {
           setValue(e.currentTarget.value);
@@ -54,8 +75,9 @@ const AddItem = ({
         type="button"
         onClick={addNewTodoItem}
         disabled={value.length === 0}
+        style={styles.button}
       >
-        Add New Item
+        +
       </button>
     </div>
   );

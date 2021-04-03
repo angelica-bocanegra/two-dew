@@ -28,7 +28,8 @@ const ListItem = ({
 
   const styles = {
     container: {
-      borderTop: '1px solid #cccccc',
+      borderBottom: '1px solid #cccccc',
+      margin: '5px',
       textDecoration: completed ? 'line-through' : 'initial',
     },
   };

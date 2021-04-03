@@ -59,10 +59,6 @@ const DailyTodo = ({
             key={o.day}
             day={o.day}
           >
-            <AddItem
-              listId={id}
-              day={o.day}
-            />
             {o.items.map((i) => (
               <ListItem
                 key={i.id}
@@ -70,6 +66,10 @@ const DailyTodo = ({
                 {...i}
               />
             ))}
+            <AddItem
+              listId={id}
+              day={o.day}
+            />
           </Column>
         ))}
       </Box>
