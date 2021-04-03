@@ -70,6 +70,12 @@ const DailyTodo = ({
               listId={id}
               day={o.day}
             />
+            {[...Array(15 - o.items.length)].map((i) => (
+              <AddItem
+                listId={i}
+                day={o.day}
+              />
+            ))}
           </Column>
         ))}
       </Box>

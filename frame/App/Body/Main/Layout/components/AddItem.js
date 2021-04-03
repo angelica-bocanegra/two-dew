@@ -38,6 +38,12 @@ const AddItem = ({
       });
   };
 
+  const handleSubmitEnter = (e) => {
+    if (e.keyCode === 13 && value !== '') {
+      addNewTodoItem();
+    }
+  };
+
   const styles = {
     input: {
       outline: 'none',
@@ -45,14 +51,14 @@ const AddItem = ({
       borderWidth: '1px',
       borderColor: '#cccccc',
       padding: '0px',
-      margin: '5px 0px 5px 5px',
+      margin: '5px 0px 0px 5px',
     },
     button: {
       borderStyle: 'none none solid none',
       borderWidth: '1px',
       borderColor: '#cccccc',
       padding: '0px',
-      margin: '5px 5px 5px 0px',
+      margin: '5px 5px 0px 0px',
     },
   };
 
@@ -61,7 +67,6 @@ const AddItem = ({
       style={{
         overflow: 'auto',
         display: 'flex',
-
       }}
     >
       <input
@@ -70,6 +75,7 @@ const AddItem = ({
         onChange={(e) => {
           setValue(e.currentTarget.value);
         }}
+        onKeyUp={handleSubmitEnter}
       />
       <button
         type="button"
